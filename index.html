@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lampada</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            column-gap: 20px;
+            row-gap: 10px;
+        }
+        button{
+            width: 80px;
+            border: none;
+            padding: 3px;
+            border-radius: 10px;
+            color: #fff;
+            background: #090;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="img">
+            <img src="./img/off.jpg" id="img">
+        </div>
+            <button id="btn">Ligar</button>
+    </div>
+
+    <script>
+
+        const btn = document.getElementById('btn');
+        const img = document.getElementById('img');
+        let test = false;
+        btn.addEventListener('click',interruptor)
+
+        function interruptor (e) {
+            if(btn.innerHTML==='Ligar'){
+                img.src = './img/on.jpg';
+                btn.innerHTML='Desligar';
+                btn.style.background= '#900';
+                btn.style.color = '#fff'
+            } else {
+                img.src = './img/off.jpg';
+                btn.innerHTML='Ligar';
+                btn.style.background= '#090'
+            }
+            console.log(e)
+        }
+
+    </script>
+</body>
+</html>
